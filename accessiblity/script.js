@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const selectors = [
-    "#block-mainnav-menu",
+    "#block-mainnav-menu h2",
     "#helpful-links h1"
   ];
 
