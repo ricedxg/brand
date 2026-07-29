@@ -1,17 +1,70 @@
-.article .article__body p a, .page-body__content p a, .footer__address p a { text-decoration: underline; color: #034ea1; }
+p a,
+.article .article__body p a,
+.page-body__content p a,
+.footer__address p a {
+  color: #3455db !important;
+  text-decoration: none !important;
+  border-bottom: 2px dotted #00205b !important;
+}
 
-.article .article__news-list-summary p span { color: #000;}
+.article .article__body p a:hover,
+.page-body__content p a:hover,
+.footer__address p a {
+  color: #00205b !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid #00205b !important;
+}
 
-.article__info span.date, .article .article__breadcrumbs span { color: #595959; }
+.article .article__news-list-summary p span {
+  color: #000;
+}
 
-h2 strong, h5 strong { color: #012169; }
+.article__info span.date,
+.article .article__breadcrumbs span {
+  color: #595959;
+}
 
-.lockup__parent, .lockup__image, .lockup__child2 {     padding: 4px 0 4px; }
+h2 strong,
+h5 strong {
+  color: #489bd5;
+}
 
-#helpful-links div.border-color-green-base strong {color: #afd4ee;}
+.lockup__parent,
+.lockup__image,
+.lockup__child2 {
+  padding: 4px 0 4px;
+}
 
-#helpful-links div.border-color-green-base  {color: #fff; font-family: CopernicusBook, serif; font-size: 3.5rem; line-height: 1.15;}
+/* =========================================================
+   ACCESSIBLE HELPFUL LINKS STYLING
+   ========================================================= */
 
-h1:empty, h2:empty, h3:empty, h4:empty, h5:empty, h6:empty { display: none !important; }
+#helpful-links div.border-color-green-base strong {
+  color: #afd4ee;
+}
+#helpful-links div.border-color-green-base {
+  color: #fff;
+  font-family: CopernicusBook, serif;
+  font-size: 3.5rem;
+  line-height: 1.15;
+}
 
-.media-oembed-content { max-width: 960px; height: auto;   width: 100%; aspect-ratio: 16 / 9; margin: auto; display: block; }
+/* Hides headings that are strictly empty OR contain an empty <strong> tag */
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty,
+h6:has(> strong:empty) {
+  display: none !important;
+}
+
+.media-oembed-content {
+  max-width: 960px;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  display: block;
+}
