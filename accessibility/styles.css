@@ -31,6 +31,18 @@ h5 strong {
   color: #489bd5;
 }
 
+/* Specific override when inside .callout--inset OR .overlay__content */
+.callout--inset h2 strong,
+.callout--inset h5 strong,
+.callout--inset .page-body__content h2 strong,
+.callout--inset .page-body__content h5 strong,
+.overlay__content h2 strong,
+.overlay__content h5 strong,
+.overlay__content .page-body__content h2 strong,
+.overlay__content .page-body__content h5 strong {
+  color: #afd4ee !important;
+}
+
 .lockup__parent,
 .lockup__image,
 .lockup__child2 {
@@ -58,7 +70,7 @@ h3:empty,
 h4:empty,
 h5:empty,
 h6:empty,
-h6:has(> strong:empty) {
+:is(h1, h2, h3, h4, h5, h6):has(> strong:empty) {
   display: none !important;
 }
 
