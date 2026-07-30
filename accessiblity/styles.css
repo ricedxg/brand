@@ -1,15 +1,17 @@
 p a,
 .article .article__body p a,
-.page-body__content p a,
-.footer__address p a {
+.page-body__content p a {
   color: #3455db !important;
   text-decoration: none !important;
   border-bottom: 2px dotted #00205b !important;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
+p a:hover,
 .article .article__body p a:hover,
-.page-body__content p a:hover,
-.footer__address p a {
+.page-body__content p a:hover {
   color: #00205b !important;
   text-decoration: none !important;
   border-bottom: 2px solid #00205b !important;
@@ -32,7 +34,7 @@ h5 strong {
 .lockup__parent,
 .lockup__image,
 .lockup__child2 {
-  padding: 4px 0 4px;
+  padding: 4px 0;
 }
 
 /* =========================================================
@@ -67,4 +69,30 @@ h6:has(> strong:empty) {
   aspect-ratio: 16 / 9;
   margin: auto;
   display: block;
+}
+
+/* =========================================================
+   ACCESSIBLE Link SIZES
+   ========================================================= */
+
+/* Header Buttons & Menu Items */
+.menu__item,
+button.menu__item,
+a.menu__item {
+  min-width: 24px;
+  min-height: 24px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/* Links inside Lists (Page Content & Navigation Blocks) */
+.page-body__content ul li a,
+.page-body__content ol li a,
+.menu--quick li a {
+  display: inline-block;
+  min-height: 24px;
+  min-width: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  box-sizing: border-box;
 }
