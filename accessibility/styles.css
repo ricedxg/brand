@@ -4,17 +4,13 @@ p a,
   color: #3455db !important;
   text-decoration: none !important;
   border-bottom: 2px dotted #00205b !important;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 p a:hover,
 .article .article__body p a:hover,
 .page-body__content p a:hover {
   color: #00205b !important;
-  text-decoration: none !important;
-  border-bottom: 2px solid #00205b !important;
 }
 
 .article .article__news-list-summary p span {
@@ -32,14 +28,8 @@ h5 strong {
 }
 
 /* Specific override when inside .callout--inset OR .overlay__content */
-.callout--inset h2 strong,
-.callout--inset h5 strong,
-.callout--inset .page-body__content h2 strong,
-.callout--inset .page-body__content h5 strong,
-.overlay__content h2 strong,
-.overlay__content h5 strong,
-.overlay__content .page-body__content h2 strong,
-.overlay__content .page-body__content h5 strong {
+:is(.callout--inset, .overlay__content) :is(h1, h2, h3, h4, h5, h6) strong,
+:is(.callout--inset, .overlay__content) strong {
   color: #afd4ee !important;
 }
 
