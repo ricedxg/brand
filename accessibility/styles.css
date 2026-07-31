@@ -27,10 +27,28 @@ h5 strong {
   color: #489bd5;
 }
 
-/* Specific override when inside .callout--inset OR .overlay__content */
+/* =========================================================
+   CALLOUT, OVERLAY, & ALERT COLOR OVERRIDES
+   ========================================================= */
+
+/* Headings & bold text inside dark callouts / overlays */
 :is(.callout--inset, .overlay__content) :is(h1, h2, h3, h4, h5, h6) strong,
 :is(.callout--inset, .overlay__content) strong {
   color: #afd4ee !important;
+}
+
+/* White links inside .callout--inset and .alert.bs-site-alert */
+:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) a,
+:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) p a {
+  color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+}
+
+/* White link hover & focus states */
+:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) a:hover,
+:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) p a:hover {
+  color: #afd4ee !important;
+  border-bottom-color: #afd4ee !important;
 }
 
 .lockup__parent,
