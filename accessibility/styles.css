@@ -1,15 +1,22 @@
 .article .article__body p a,
-.page-body__content p a {
+.page-body__content p a,
+.page-body__content ul a,
+.page-body__content ol a {
+  border-bottom: none;
+
+  text-decoration: underline dotted #00205b 2px;
+  text-underline-offset: 3px;
+
   color: #3455db;
-  text-decoration: none;
-  border-bottom: 2px dotted #00205b;
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-decoration-color 0.3s ease;
 }
 
-p a:hover,
 .article .article__body p a:hover,
 .page-body__content p a:hover {
   color: #00205b;
+  text-decoration-color: #00205b;
 }
 
 .article .article__news-list-summary p span {
@@ -40,14 +47,15 @@ h5 strong {
 :is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) a,
 :is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) p a {
   color: #ffffff;
-  border-bottom-color: #ffffff;
+  text-decoration-color: #ffffff;
+  border-bottom: none;
 }
 
-/* White link hover & focus states */
+/* White link hover */
 :is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) a:hover,
 :is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) p a:hover {
   color: #afd4ee;
-  border-bottom-color: #afd4ee;
+  text-decoration-color: #afd4ee;
 }
 
 .lockup__parent,
@@ -78,7 +86,7 @@ h4:empty,
 h5:empty,
 h6:empty,
 :is(h1, h2, h3, h4, h5, h6):has(> strong:empty) {
-  display: none !important;
+  display: none;
 }
 
 .media-oembed-content {
