@@ -38,8 +38,8 @@ h5 strong {
    ========================================================= */
 
 /* Headings & bold text inside dark callouts / overlays */
-:is(.callout--inset, .overlay__content) :is(h1, h2, h3, h4, h5, h6) strong,
-:is(.callout--inset, .overlay__content) strong {
+:is(.callout--inset, [class*="overlay"]) :is(h1, h2, h3, h4, h5, h6) strong,
+:is(.callout--inset, [class*="overlay"]) strong {
   color: #afd4ee;
 }
 
