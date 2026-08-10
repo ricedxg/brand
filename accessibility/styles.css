@@ -37,23 +37,29 @@ h5 strong {
    CALLOUT, OVERLAY, & ALERT COLOR OVERRIDES
    ========================================================= */
 
-/* Headings & bold text inside dark callouts / overlays */
-:is(.callout--inset, [class*="overlay"]) :is(h1, h2, h3, h4, h5, h6) strong,
+/* Headings, titles, & bold text inside dark callouts / overlays */
+:is(.callout--inset, [class*="overlay"])
+  :is(h1, h2, h3, h4, h5, h6, .article_title),
+:is(.callout--inset, [class*="overlay"])
+  :is(h1, h2, h3, h4, h5, h6, .article_title)
+  strong,
 :is(.callout--inset, [class*="overlay"]) strong {
-  color: #afd4ee;
+  color: #ffffff;
 }
 
-/* White links inside .callout--inset and .alert.bs-site-alert */
-:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) a,
-:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) p a {
+/* White links inside .callout--inset, overlays, and alerts */
+:is(.callout--inset, [class*="overlay"], .alert, .bs-site-alert) a,
+:is(.callout--inset, [class*="overlay"], .alert, .bs-site-alert) p a {
   color: #ffffff;
   text-decoration-color: #ffffff;
   border-bottom: none;
 }
 
-/* White link hover */
-:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) a:hover,
-:is(.callout--inset, .alert.bs-site-alert, .alert, .bs-site-alert) p a:hover {
+/* Light-blue hover state for links inside dark components */
+:is(.callout--inset, [class*="overlay"], .alert, .bs-site-alert) a:hover,
+:is(.callout--inset, [class*="overlay"], .alert, .bs-site-alert) a:focus,
+:is(.callout--inset, [class*="overlay"], .alert, .bs-site-alert) p a:hover,
+:is(.callout--inset, [class*="overlay"], .alert, .bs-site-alert) p a:focus {
   color: #afd4ee;
   text-decoration-color: #afd4ee;
 }

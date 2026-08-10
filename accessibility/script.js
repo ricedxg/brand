@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const closeButton = document.getElementById("search-close");
-    if (closeButton) {
-      closeButton.setAttribute("aria-label", "Close Search");
-    }
-  });
+  const closeButton = document.getElementById("search-close");
+  if (closeButton) {
+    closeButton.setAttribute("aria-label", "Close Search");
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
-  const selectors = [
-    "#block-mainnav-menu h2",
-    "#helpful-links h1"
-  ];
+  const selectors = ["#block-mainnav-menu h2", "#helpful-links h1"];
 
   selectors.forEach((selector) => {
     const element = document.querySelector(selector);
@@ -29,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
       element.parentNode.replaceChild(newDiv, element);
     }
   });
-});  
+});
 
 /* =========================================================
    Empty heading removal
    ========================================================= */
 window.addEventListener("load", () => {
-  document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(el => {
+  document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((el) => {
     if (!el.textContent.trim()) el.remove();
   });
 });
@@ -44,35 +41,56 @@ window.addEventListener("load", () => {
    Selectric input fields fix for missing label
    ========================================================= */
 
-  document.addEventListener("DOMContentLoaded", function () {
-    function fixSelectricLabels() {
-      const wrappers = document.querySelectorAll(".selectric-wrapper");
+document.addEventListener("DOMContentLoaded", function () {
+  function fixSelectricLabels() {
+    const wrappers = document.querySelectorAll(".selectric-wrapper");
 
-      wrappers.forEach((wrapper) => {
-        const select = wrapper.querySelector("select");
-        const selectricInput = wrapper.querySelector(".selectric-input");
+    wrappers.forEach((wrapper) => {
+      const select = wrapper.querySelector("select");
+      const selectricInput = wrapper.querySelector(".selectric-input");
 
-        if (select && selectricInput) {
-          // Assign the expected ID to <input class="selectric-input">
-          const selectId = select.getAttribute("id");
-          if (selectId) {
-            selectricInput.setAttribute("id", selectId + "-selectric");
-          }
+      if (select) {
+        // 1. Ensure the underlying hidden <select> is ignored by audit scanners
+        select.setAttribute("aria-hidden", "true");
+        select.setAttribute("tabindex", "-1");
 
+        const selectId = select.getAttribute("id");
+        if (selectId) {
           // Locate the associated <label> using the select's ID
           const label = document.querySelector(`label[for="${selectId}"]`);
+
           if (label) {
-            // Set aria-label directly to ensure screen readers see instantly
+            // 2. Ensure the label itself has an ID to link via aria-labelledby
+            let labelId = label.getAttribute("id");
+            if (!labelId) {
+              labelId = selectId + "-label";
+              label.setAttribute("id", labelId);
+            }
+
             const labelText = label.textContent.trim();
-            selectricInput.setAttribute("aria-label", labelText);
+
+            // 3. Connect the visible selectric input to the label
+            if (selectricInput) {
+              selectricInput.setAttribute("id", selectId + "-selectric");
+              selectricInput.setAttribute("aria-label", labelText);
+              selectricInput.setAttribute("aria-labelledby", labelId);
+            }
           }
         }
-      });
-    }
+      }
+    });
+  }
 
-    // Run immediately
+  // Run immediately
+  fixSelectricLabels();
+
+  // Watch for Drupal Views AJAX updates or dynamic re-renders
+  const observer = new MutationObserver(function () {
     fixSelectricLabels();
-
-    // Run slightly delayed in case Selectric initializes dynamically via AJAX/jQuery
-    setTimeout(fixSelectricLabels, 500);
   });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+});
