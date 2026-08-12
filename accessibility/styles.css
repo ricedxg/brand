@@ -125,18 +125,12 @@ h5 strong {
     .bs-site-alert
   )
   p
-  a:hover,
-:is(#main-content, main)
-  :is(
-    .callout--inset,
-    [class*="overlay"],
-    [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
-    .alert,
-    .bs-site-alert
-  )
-  .lockup__parent,
+  a:hover {
+  color: #afd4ee; /* Or intended hover color */
+}
+
+/* Lockup element padding overrides */
+.lockup__parent,
 .lockup__image,
 .lockup__child2 {
   padding: 4px 0;
