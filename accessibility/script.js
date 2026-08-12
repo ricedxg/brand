@@ -41,10 +41,13 @@ window.addEventListener("load", () => {
    Placeholder Social Profile Share Links on Article Pages Removal
    ========================================================= */
 document.addEventListener("DOMContentLoaded", function () {
-  var shareContainer = document.querySelector(".article_share_buttons");
-  if (shareContainer) {
-    shareContainer.remove();
-  }
+  var shareContainers = document.querySelectorAll(
+    ".article_share_buttons, .article__share-buttons",
+  );
+
+  shareContainers.forEach(function (container) {
+    container.remove();
+  });
 });
 
 /* =========================================================
