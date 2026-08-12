@@ -132,8 +132,9 @@ h5 strong {
 /* Lockup element padding overrides */
 .lockup__parent,
 .lockup__image,
+.lockup__child1,
 .lockup__child2 {
-  padding: 4px 0;
+  padding: 4px;
 }
 
 /* =========================================================
