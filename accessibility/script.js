@@ -38,6 +38,16 @@ window.addEventListener("load", () => {
 });
 
 /* =========================================================
+   Placeholder Social Profile Share Links on Article Pages Removal
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
+  var shareContainer = document.querySelector(".article_share_buttons");
+  if (shareContainer) {
+    shareContainer.remove();
+  }
+});
+
+/* =========================================================
    Selectric input fields fix for missing label
    ========================================================= */
 
