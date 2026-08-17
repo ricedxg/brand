@@ -40,35 +40,14 @@ h5 strong {
 /* Headings, titles, & bold text inside dark callouts, overlays, & alerts */
 :is(
     .callout--inset,
+    .callout-inset,
+    .callout--dark,
     [class*="overlay"],
     [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
     .alert,
     .bs-site-alert
   )
-  :is(h1, h2, h3, h4, h5, h6, .article_title),
-:is(
-    .callout--inset,
-    [class*="overlay"],
-    [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
-    .alert,
-    .bs-site-alert
-  )
-  :is(h1, h2, h3, h4, h5, h6, .article_title)
-  strong,
-:is(
-    .callout--inset,
-    [class*="overlay"],
-    [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
-    .alert,
-    .bs-site-alert
-  )
-  strong {
+  :is(h1, h2, h3, h4, h5, h6, .article_title, strong) {
   color: #ffffff;
 }
 
@@ -76,26 +55,14 @@ h5 strong {
 :is(#main-content, main)
   :is(
     .callout--inset,
+    .callout-inset,
+    .callout--dark,
     [class*="overlay"],
     [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
     .alert,
     .bs-site-alert
   )
-  a,
-:is(#main-content, main)
-  :is(
-    .callout--inset,
-    [class*="overlay"],
-    [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
-    .alert,
-    .bs-site-alert
-  )
-  p
-  a {
+  :is(a, p a) {
   color: #ffffff;
   text-decoration: underline dotted #ffffff 2px;
   text-underline-offset: 3px;
@@ -106,27 +73,15 @@ h5 strong {
 :is(#main-content, main)
   :is(
     .callout--inset,
+    .callout-inset,
+    .callout--dark,
     [class*="overlay"],
     [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
     .alert,
     .bs-site-alert
   )
-  a:hover,
-:is(#main-content, main)
-  :is(
-    .callout--inset,
-    [class*="overlay"],
-    [id*="overlay"],
-    [class*="callout"],
-    [id*="callout"],
-    .alert,
-    .bs-site-alert
-  )
-  p
-  a:hover {
-  color: #afd4ee; /* Or intended hover color */
+  :is(a:hover, p a:hover) {
+  color: #afd4ee;
 }
 
 /* Lockup element padding overrides */
