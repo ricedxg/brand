@@ -44,8 +44,8 @@ h5 strong {
     .callout--dark,
     [class*="overlay"],
     [id*="overlay"],
-    .alert,
-    .bs-site-alert
+    .alert:not(.alert-warning),
+    .bs-site-alert:not(.alert-warning)
   )
   :is(h1, h2, h3, h4, h5, h6, .article_title, strong) {
   color: #ffffff;
