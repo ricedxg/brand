@@ -38,7 +38,7 @@ h5 strong {
    ========================================================= */
 
 /* Headings, titles, & bold text inside dark callouts, overlays, & alerts */
-:is(
+/* :is(
     .callout--inset,
     .callout-inset,
     .callout--dark,
@@ -49,10 +49,10 @@ h5 strong {
   )
   :is(h1, h2, h3, h4, h5, h6, .article_title, strong) {
   color: #ffffff;
-}
+} */
 
 /* White links inside dark callouts, overlays, and alerts */
-:is(#main-content, main)
+/* :is(#main-content, main)
   :is(
     .callout--inset,
     .callout-inset,
@@ -67,10 +67,10 @@ h5 strong {
   text-decoration: underline dotted #ffffff 2px;
   text-underline-offset: 3px;
   border-bottom: none;
-}
+} */
 
 /* Light-blue hover states inside dark components */
-:is(#main-content, main)
+/* :is(#main-content, main)
   :is(
     .callout--inset,
     .callout-inset,
@@ -82,7 +82,7 @@ h5 strong {
   )
   :is(a:hover, p a:hover) {
   color: #afd4ee;
-}
+} */
 
 /* Lockup element padding overrides */
 .lockup__parent,
